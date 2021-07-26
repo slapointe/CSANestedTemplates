@@ -4,6 +4,10 @@
     "parameters": {
         "name": {
             "type": "String"
+        },
+        "location": {
+            "type": "String",
+            "defaultValue": "eastus"
         }
     },
     "variables": {},
@@ -12,7 +16,7 @@
             "type": "microsoft.insights/components",
             "apiVersion": "2015-05-01",
             "name": "[parameters('name')]",
-            "location": "eastus",
+            "location": "[parameters('location')]",
             "kind": "web",
             "properties": {
                 "Application_Type": "web",
